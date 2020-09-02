@@ -1,0 +1,8 @@
+    <app-search (newZip)="addNewZip($event)"></app-search>
+
+    <div class = "container-fluid">
+        <div *ngFor="let zipCode of this.zipCodes">
+            <app-weather-details [currentZipCode]='zipCode' (deleteEvent)='deleteZip($event)'></app-weather-details>
+            <!-- <ngc-weather [zipCode]='zipCode' (zipDeleted)='deleteZip($event)'></ngc-weather> -->
+        </div>    
+    </div>

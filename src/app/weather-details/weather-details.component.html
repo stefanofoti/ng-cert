@@ -1,0 +1,21 @@
+<div *ngIf="loadCompleted">
+    <div class="well flex">
+        <div>
+            <h3> {{this.lastResponse.name}} ({{currentZipCode}})</h3>
+            <h4>Current conditions: {{this.lastResponse.description}}</h4>
+            <h4>Temperatures today:</h4>
+            <p>
+            Current {{this.lastResponse.temp}}
+            - Max {{this.lastResponse.temp_min}}
+            - Min {{this.lastResponse.temp_max}}
+            </p>
+            <p>
+            <a href="/forecast/{{currentZipCode}}">Show 5-day forecast for {{this.lastResponse.name}}</a>
+            </p>
+        </div>
+        <div>
+            <span class="close" (click)="deleteZip(currentZipCode)" >×</span>
+            <img src="{{ this.lastResponse.image }}"/>
+        </div>
+    </div>
+</div>
